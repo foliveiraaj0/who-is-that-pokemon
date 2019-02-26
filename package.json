@@ -7,7 +7,7 @@
     "live-server": "live-server --watch=build,index.html --port=3001 --entry-file=./index.html",
     "compile-sass": "node-sass app/scss/index.scss build/index.css -w",
     "clear": "rm -rf build & mkdir build",
-    "start": "npm run clear & npm run compile-sass & webpack-dev-server --mode development & npm run live-server",
+    "start": "npm run compile-sass & webpack-dev-server --mode development & npm run live-server",
     "build": "node-sass app/scss/index.scss build/index.css --output-style=compressed & webpack --mode production"
   },
   "repository": {

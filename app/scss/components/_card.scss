@@ -1,0 +1,41 @@
+.card {
+  width: 22rem;
+  height: 31rem;
+  position: relative;
+  background-image: url("../assets/cards/fire_card.png");
+  background-repeat: no-repeat;
+  transition: all .2s;
+  &-name {
+    position: absolute;
+    transform: translate(5.7rem, .83rem);
+  
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  &-sprite {
+    position: absolute;
+    transform: scale(2) translate(3.3rem, 2.2rem); 
+  }
+  &-atack {
+    position: absolute;
+    
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  &-atack--1 {
+    transform: translate(3rem, 17.5rem);
+  }
+  &-atack--2 {
+    transform: translate(3rem, 20.5rem);
+  }
+  &-description {
+    position: absolute;
+    transform: translate(11.5rem, 26.2rem) skewX(-35deg);
+    width: 10rem;
+    
+    font-size: .7rem;
+    font-weight: bold;
+    line-height: 1;
+    word-spacing: 1.7px
+  }
+}
