@@ -14,9 +14,5 @@ module.exports = {
         use: ['babel-loader']
       }
     ]
-  },
-  devServer: {
-    port: 3001,
-    contentBase: path.resolve(__dirname, 'build')
   }
 }
