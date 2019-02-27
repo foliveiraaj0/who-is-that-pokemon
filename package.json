@@ -4,11 +4,12 @@
   "description": "A page to collect pokemons. The more you can recognize them the more you can get them",
   "main": "index.js",
   "scripts": {
-    "live-server": "live-server --watch=build --port=9001 --entry-file=./build/index.html",
+    "live-server": "live-server --watch=./build --port=9001 --open=./build --entry-file=build/index.html",
     "compile-sass": "node-sass app/scss/index.scss build/index.css",
+    "compile-sass:w": "node-sass app/scss/index.scss build/index.css -w",
     "clear": "rm -rf build && mkdir build && cp index.html build && cp -a assets build && touch build/bundle.js build/index.css",
-    "start:js-live": "npm run clear && npm run compile-sass & webpack-dev-server --mode development",
-    "start:css-live": "npm run clear && npm run compile-sass & webpack --mode development & npm run live-server",
+    "start:js-live": "npm run clear && npm run compile-sass && webpack-dev-server --mode development",
+    "start:css-live": "npm run clear && webpack --mode development && npm run compile-sass && npm run compile-sass:w & npm run live-server",
     "build": "npm run clear && node-sass app/scss/index.scss build/index.css --output-style=compressed && webpack --mode production"
   },
   "repository": {
