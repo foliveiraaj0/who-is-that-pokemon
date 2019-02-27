@@ -1,6 +1,6 @@
 .card {
   width: 22rem;
-  height: 31rem;
+  height: 30.5rem;
   position: relative;
   background-image: url("../assets/cards/fire_card.png");
   background-repeat: no-repeat;
@@ -30,12 +30,12 @@
   }
   &-description {
     position: absolute;
-    transform: translate(11.5rem, 26.2rem) skewX(-35deg);
+    transform: translate(11.3rem, 26rem) skewX(-42deg);
     width: 10rem;
     
-    font-size: .7rem;
+    font-size: .75rem;
     font-weight: bold;
     line-height: 1;
-    word-spacing: 1.7px
+    word-spacing: 1.2px
   }
 }
