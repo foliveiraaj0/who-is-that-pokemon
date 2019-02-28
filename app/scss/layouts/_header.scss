@@ -1,0 +1,8 @@
+.header {
+  height: 20rem;
+  background-image: url("assets/header.jpg") ;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  clip-path: polygon(.1% .1%, 99% .1%, 99% 99%, .1% 99%);
+  
+}

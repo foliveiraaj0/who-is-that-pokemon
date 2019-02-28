@@ -5,37 +5,26 @@
   background-image: url("/assets/cards/grass_card.png");
   background-repeat: no-repeat;
   transition: all .2s;
-  &-name {
+  &__name {
     position: absolute;
     transform: translate(5.7rem, .83rem);
-  
-    font-size: 1.5rem;
-    font-weight: bold;
   }
-  &-sprite {
+  &__sprite {
     position: absolute;
     transform: scale(2) translate(3.3rem, 2.2rem); 
   }
-  &-atack {
+  &__attack {
     position: absolute;
-    
-    font-size: 1.5rem;
-    font-weight: bold;
   }
-  &-atack--1 {
+  &__attack--1 {
     transform: translate(3rem, 17.5rem);
   }
-  &-atack--2 {
+  &__attack--2 {
     transform: translate(3rem, 20.5rem);
   }
-  &-description {
+  &__description {
     position: absolute;
     transform: translate(11.3rem, 26rem) skewX(-42deg);
     width: 10rem;
-    
-    font-size: .75rem;
-    font-weight: bold;
-    line-height: 1;
-    word-spacing: 1.2px
   }
 }

@@ -12,7 +12,6 @@ const PokemonType = {
   METAL: 'metal',
   DRAGON: 'dragon'
 }
-
     
 class PokemonFactory {
   static createPokemon(pokemonServerObject) {
@@ -82,7 +81,6 @@ function getPokemon(name, callback) {
   p.getPokemonByName(name) 
     .then(function(response) {
       const pokemon = PokemonFactory.createPokemon(response);
-      console.log(response);
       if(pokemon && callback) {
         callback(pokemon);
       }

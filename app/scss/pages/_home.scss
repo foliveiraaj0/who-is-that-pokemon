@@ -1,0 +1,14 @@
+.quiz {
+  &__title {
+    height: 7rem;
+    left: 50%;
+    display: inline-block;
+    position: relative;
+    transform: translate(-50%, 30%);
+  }
+  &__question {
+    height: 30rem;
+    background-image: url("assets/who_is_this_pokemon_bg.png");
+    background-size: 100% 100%;
+  }
+}
