@@ -1,14 +1,31 @@
 .quiz {
-  &__title {
-    height: 7rem;
-    left: 50%;
-    display: inline-block;
-    position: relative;
-    transform: translate(-50%, 30%);
-  }
   &__question {
     height: 30rem;
     background-image: url("assets/who_is_this_pokemon_bg.png");
     background-size: 100% 100%;
+  }
+  &__tips {
+  }
+  &-options {
+    display: block;
+    /* text-align: center; */
+    
+    > * {
+      /* implement the grid properties so that this boxes occuppy 50% of their box */
+      display: inline-block;
+      cursor: pointer;
+    }
+    &__skip {
+      /* margin-right: 10rem; */
+    }
+    &__answer {
+      /* margin-left: 10rem; */
+    }
+    &__input {
+      margin-right: 3rem;
+    }
+    &__button {
+
+    }
   }
 }
