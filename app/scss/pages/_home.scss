@@ -1,5 +1,6 @@
 .quiz {
-  > * {
+  margin-bottom: 1rem;
+  > :not(:last-child) {
     margin-bottom: 1rem;
   }
   &__question {
@@ -11,19 +12,13 @@
     
   }
   &-options {
-   /*  display: block; */
-    /* text-align: center; */
     > * {
-      /* implement the grid properties so that this boxes occuppy 50% of their box */
-      /* display: inline-block; */
       cursor: pointer;
     }
     &__skip {
-      /* margin-right: 10rem; */
       text-align: center;
     }
     &__answer {
-      /* margin-left: 10rem; */
       textarea:focus, input:focus{
         outline: none;
       }
@@ -32,9 +27,18 @@
       margin-right: .5rem;
       width: 10rem;
       height: 1.65rem;
-      padding-bottom: 7px;
+      padding-bottom: 4px;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-color: rgba(0, 0, 0, 0.7);
+      border-width: 1px;
+      font-size: 1rem;
+      padding-left: 8px;
+      padding-right: 8px;
     }
     &__button {
+      vertical-align: middle;
       background-color: rgba(0,255,255,.7);
       border: 1px solid rgba(black, .5);
       padding: 5px 15px;
@@ -48,4 +52,9 @@
       }
     }
   }
+}
+
+.pokedex {
+  height: 10rem;
+  background-color: black;
 }
