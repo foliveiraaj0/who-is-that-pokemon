@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Who is this pokemon?</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="./bootstrap-grid.min.css">
+    <link rel="stylesheet" href="./bootstrap.min.css">
     <link rel="stylesheet" href="./index.css">
   </head>
   <body>
@@ -30,12 +31,14 @@
           </li>
         </ul>
         <div class="quiz-options">
-          <div class="quiz-options__skip">
-            <a class="quiz-options__button">skip</a>
-          </div>
-          <div class="quiz-options__answer">
-            <input class="quiz-options__input"></input>
-            <a class="quiz-options__button">try it!</a>
+          <div class="row u_no_margin">
+            <div class="quiz-options__skip col-sm">
+              <a href="#" class="quiz-options__button">I don't know this pokemon, next!</a>
+            </div>
+            <div class="quiz-options__answer col-sm">
+              <input class="quiz-options__input"></input>
+              <a href="#" class="quiz-options__button">You are mine!</a>
+            </div>
           </div>
         </div>
       </div>
@@ -59,6 +62,8 @@
         </p>
       </div> -->
     </section>
+    <script src="./bootstrap.bundle.min.js" charset="utf-8"></script>
+    <script src="./bootstrap.min.js" charset="utf-8"></script>
     <script src="./bundle.js" charset="utf-8"></script>
     
   </body>

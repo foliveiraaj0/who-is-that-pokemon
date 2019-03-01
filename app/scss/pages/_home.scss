@@ -1,31 +1,51 @@
 .quiz {
+  > * {
+    margin-bottom: 1rem;
+  }
   &__question {
     height: 30rem;
     background-image: url("assets/who_is_this_pokemon_bg.png");
     background-size: 100% 100%;
   }
   &__tips {
+    
   }
   &-options {
-    display: block;
+   /*  display: block; */
     /* text-align: center; */
-    
     > * {
       /* implement the grid properties so that this boxes occuppy 50% of their box */
-      display: inline-block;
+      /* display: inline-block; */
       cursor: pointer;
     }
     &__skip {
       /* margin-right: 10rem; */
+      text-align: center;
     }
     &__answer {
       /* margin-left: 10rem; */
+      textarea:focus, input:focus{
+        outline: none;
+      }
     }
     &__input {
-      margin-right: 3rem;
+      margin-right: .5rem;
+      width: 10rem;
+      height: 1.65rem;
+      padding-bottom: 7px;
     }
     &__button {
-
+      background-color: rgba(0,255,255,.7);
+      border: 1px solid rgba(black, .5);
+      padding: 5px 15px;
+      font-size: .85rem;
+      text-decoration: none;
+      box-shadow: 0 10px 20px, rgba(0,0,0,.2);
+      border-radius: 10px;
+      transition: all .2s;
+      &:hover {
+        transform: translateY(-5px);
+      }
     }
   }
 }
