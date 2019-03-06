@@ -14,7 +14,6 @@
     background-repeat: no-repeat;
     position: absolute;
     background-size: 100% 100%;
-    background-image: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png);
     height: 15rem;
     width: 15rem;
     transform: translate(11rem, 3rem);
@@ -29,6 +28,7 @@
     }
   }
   &-options {
+    margin-bottom: 2rem;
     > * {
       cursor: pointer;
       position: relative;
@@ -44,7 +44,7 @@
       } 
     }
     &__answer {
-      textarea:focus, input:focus{
+      textarea:focus, input:focus {
         outline: none;
       }
       text-align: center;

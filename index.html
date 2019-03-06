@@ -12,13 +12,13 @@
     </section>
     <section class="content">
       <div class="quiz">
-        <div class="quiz__pokemon">
+        <div id="quiz_pokemon" class="quiz__pokemon">
           
         </div>
         <div class="quiz__question">
 
         </div>
-        <ul class="quiz__tips u_centrilize">
+        <ul id="quiz_tips" class="quiz__tips u_centrilize">
           <li class="tips__text">
             he eats a lot of apple
           </li>
@@ -35,11 +35,11 @@
         <div class="quiz-options">
           <div class="row u_no_margin">
             <div class="quiz-options__skip col-sm">
-              <a href="#" class="quiz-options__button quiz-options__button--skip">I don't know this pokemon, next!</a>
+              <a id="skip_button" href="javascript:void(0)" class="quiz-options__button quiz-options__button--skip">I don't know this pokemon, next!</a>
             </div>
             <div class="quiz-options__answer col-sm">
-              <input class="quiz-options__input"></input>
-              <a href="#" class="quiz-options__button quiz-options__button--answer">You are mine!</a>
+              <input id="answer_input" class="quiz-options__input"></input>
+              <a id="answer_button" href="javascript:void(0)" class="quiz-options__button quiz-options__button--answer">You are mine!</a>
             </div>
           </div>
         </div>
@@ -66,6 +66,7 @@
     </section>
     <script src="./bootstrap.bundle.min.js" charset="utf-8"></script>
     <script src="./bootstrap.min.js" charset="utf-8"></script>
+    <script src="./jquery-3.3.1.min.js" charset="utf-8"></script>
     <script src="./bundle.js" charset="utf-8"></script>
     
   </body>
