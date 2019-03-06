@@ -1,12 +1,23 @@
 .quiz {
   margin-bottom: 1rem;
+  position: relative;
   > :not(:last-child) {
     margin-bottom: 1rem;
   }
   &__question {
-    height: 30rem;
-    background-image: url("assets/who_is_this_pokemon_bg.png");
+    height: 20rem;
+    background-image: url(assets/who_is_this_pokemon_bg.png);
     background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  &__pokemon {
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: 100% 100%;
+    background-image: url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png);
+    height: 15rem;
+    width: 15rem;
+    transform: translate(11rem, 3rem);
   }
   &__tips {
     li {
