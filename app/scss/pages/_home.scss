@@ -1,5 +1,5 @@
 .quiz {
-  margin-bottom: 1rem;
+  margin-bottom: 3.5rem;
   position: relative;
   > :not(:last-child) {
     margin-bottom: 1rem;
@@ -96,6 +96,30 @@
 }
 
 .pokedex {
-  height: 10rem;
-  background-color: black;
+  height: 20rem;
+  width: 100%;
+  display: flex;
+  &__device {
+    width: 40%;
+    &--openned {
+      width: 40%;
+      height: 100%;
+      margin-top: -15px;
+      margin-left: -10px;
+      background-size: 100% 100%;
+      background-image: url("assets/pokedex_openned.png");
+    }
+    &--closed {
+      width: 39%;
+      height: 80%;
+      background-size: 60% 100%;
+      background-repeat: no-repeat;
+      background-image: url("assets/pokedex_closed.png");
+    }
+  }
+  &__carousel {
+    width: 500px;;
+    height: 100%;
+  }
+
 }

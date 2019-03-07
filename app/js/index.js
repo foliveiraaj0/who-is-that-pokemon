@@ -1,7 +1,10 @@
 const pokedex = require('pokeapi-js-wrapper');
 const p = new pokedex.Pokedex();
 
-let currentPokemon = {};
+const PokedexState = {
+  OPENNED: 'openned',
+  CLOSED: 'closed'
+}
 
 const PokemonType = {
   GRASS: 'grass',
@@ -15,12 +18,19 @@ const PokemonType = {
   DRAGON: 'dragon'
 }
 
-const ScreenElements = {
+const EventEmiter = {
   QUIZ_POKEMON: '#quiz_pokemon',
   QUIZ_TIPS: '#quiz_tips',
   SKIP_BUTTON: '#skip_button',
   ANSWER_INPUT: '#answer_input',
-  ANSWER_BUTTON: '#answer_button'
+  ANSWER_BUTTON: '#answer_button',
+  POKEDEX_BUTTON: '#pokedex'
+}
+
+const ScreenElements = {
+  POKEDEX_DEVICE: '#pokedex_device',
+  POKEDEX_CAROUSEL: '#pokedex_carousel',
+  POKEDEX_NO_POKEMOnS: '#pokedex_no_pokemons'
 }
     
 class PokemonFactory {
@@ -94,6 +104,10 @@ class Pokemon {
   
 }
 
+let currentPokemon = {};
+let currentPokedexState = PokedexState.CLOSED;
+let pokemonList = [];
+
 function getPokemon(name, callback) {
   p.getPokemonByName(name) 
     .then(function(response) {
@@ -105,27 +119,49 @@ function getPokemon(name, callback) {
 }
 
 function setHandlers() {
-  $( ScreenElements.SKIP_BUTTON ).click( () => skipPokemon());
+  $( EventEmiter.SKIP_BUTTON ).click( () => skipPokemon());
 
-  $( ScreenElements.ANSWER_BUTTON ).click( () => {
-    const answer = $(ScreenElements.ANSWER_INPUT)[0].value;
-    validateAnswer(answer);
+  $( EventEmiter.ANSWER_BUTTON ).click( () => {
+    const answer = $(EventEmiter.ANSWER_INPUT).val();
+    const answerIsValid = validateAnswer(answer);
+    if(answerIsValid) {
+      pokemonList.push(currentPokemon);
+      const pokedex_carousel = $(ScreenElements.POKEDEX_CAROUSEL);
+      pokedex_carousel.text("");
+      pokemonList.forEach(pokemon => {
+        console.log(pokemon.name);
+        pokedex_carousel.text(pokedex_carousel.text() + pokemon.name + ", ");
+      })
+      currentPokemon = undefined;
+      skipPokemon();
+    }
   });
+
+  $(EventEmiter.POKEDEX_BUTTON).click( () => {
+    currentPokedexState = currentPokedexState === PokedexState.OPENNED 
+    ? PokedexState.CLOSED
+    : PokedexState.OPENNED;
+    setPokedexState(currentPokedexState);
+  })
 }
 
 function setQuizPokemon(back_sprite) {
-  $(ScreenElements.QUIZ_POKEMON).css('background-image', "url("+back_sprite+")");
+  $(EventEmiter.QUIZ_POKEMON).css('background-image', "url("+back_sprite+")");
 }
 
 function skipPokemon() {
   getPokemon(getRandomPokemonId(), (pokemon) => {
-    console.log(pokemon);
+    currentPokemon = pokemon;
+    console.log(currentPokemon);
     setQuizPokemon(pokemon.back_sprite);
+    cleanInput();
   })
 }
 
 function validateAnswer(answer) {
   console.log(answer);
+  console.log(currentPokemon);
+  return currentPokemon && answer === currentPokemon.name;
 }
 
 function getRandomPokemonId() {
@@ -134,16 +170,71 @@ function getRandomPokemonId() {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-window.onload = init();
+function setPokedexState(state) {
+  
+  if(state === PokedexState.OPENNED) {
+    openPokedex();
+    showCarousel();
+  }
+  else {
+    hideCarousel();
+    closePokedex();
+  }
+}
+
+function openPokedex() {
+  const pokedex_device = $(ScreenElements.POKEDEX_DEVICE);
+  pokedex_device.removeClass('pokedex__device--closed');
+  pokedex_device.addClass('pokedex__device--openned');
+}
+
+function closePokedex() {
+  const pokedex_device = $(ScreenElements.POKEDEX_DEVICE);
+  pokedex_device.removeClass('pokedex__device--openned');
+  pokedex_device.addClass('pokedex__device--closed');
+}
+
+function showCarousel() {
+  const pokedex_carousel = $(ScreenElements.POKEDEX_CAROUSEL);
+  const pokedex_no_pokemons = $(ScreenElements.POKEDEX_NO_POKEMOnS);
+  if(pokemonList && pokemonList.length > 0) {
+    pokedex_carousel.removeClass('u_hide');
+    pokedex_carousel.addClass('u_show');
+
+    pokedex_no_pokemons.removeClass('u_show');
+    pokedex_no_pokemons.addClass('u_hide');
+  }
+  else {
+    pokedex_carousel.removeClass('u_show');
+    pokedex_carousel.addClass('u_hide');
+    
+    pokedex_no_pokemons.removeClass('u_hide');
+    pokedex_no_pokemons.addClass('u_show');
+  }
+}
+
+function hideCarousel() {
+  const pokedex_carousel = $(ScreenElements.POKEDEX_CAROUSEL);
+  const pokedex_no_pokemons = $(ScreenElements.POKEDEX_NO_POKEMOnS);
+  pokedex_carousel.removeClass('u_show');
+  pokedex_carousel.addClass('u_hide');
+
+  pokedex_no_pokemons.removeClass('u_show');
+  pokedex_no_pokemons.addClass('u_hide');
+}
+
+function cleanInput() {
+  const answerInput = $(EventEmiter.ANSWER_INPUT);
+  answerInput.val("");
+}
 
 function init() {
   getPokemon(getRandomPokemonId(), (pokemon) => {
+    currentPokemon = pokemon;
+    console.log(currentPokemon);
     setHandlers();
     setQuizPokemon(pokemon.back_sprite);
   })
-  
-
-
 }
 
-
+window.onload = init();
