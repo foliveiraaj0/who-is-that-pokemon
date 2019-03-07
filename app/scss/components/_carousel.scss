@@ -1,24 +1,46 @@
 .carousel {
   color: red;
   background-color: black;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  /* padding-left: 5%;
+  padding-right: 5%; */
+  > * {
+    width: 20%;
+    align-self: center;
+    > img {
+      width: 100%;
+      height: 100%;
+      transform: scale(1.5);
+      /* transform: scale(1.5);
+       width: 120%;
+      height: 120%;  */
+    }
+  }
+  
 }
 
 .start-carousel {
+  display: flex;
   animation-name: startCarousel;
   animation-duration: 1.5s;
+  animation-fill-mode: forwards;
 }
 
 .end-carousel {
   animation-name: endCarousel;
   animation-duration: 1.5s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes endCarousel {
   0% {
     opacity: 1;
   }
-  100% {
+  100%  {
     opacity: 0;
+    display: none;
   }
 }
 
@@ -39,6 +61,7 @@
 
   100% {
     opacity: 1;
+    display: flex;
     /* transform: translateX(0) rotate(360deg); */
   }
 }

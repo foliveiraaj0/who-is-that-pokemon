@@ -23,9 +23,13 @@
 }
 
 .u_hide {
-  display: none;
+  display: none !important;
 }
 
 .u_show {
-  display: block;
+  display: block !important;
+}
+
+.u_show-flex {
+  display: flex !important;
 }
