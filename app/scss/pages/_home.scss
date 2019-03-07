@@ -100,25 +100,25 @@
   width: 100%;
   display: flex;
   &__device {
-    width: 40%;
+    width: 30%;
     &--openned {
-      width: 40%;
       height: 100%;
-      margin-top: -15px;
-      margin-left: -10px;
-      background-size: 100% 100%;
-      background-image: url("assets/pokedex_openned.png");
+      background-size: 100% 87%;
+      background-repeat: no-repeat;
+      background-image: url(assets/pokedex_openned.png);
     }
     &--closed {
-      width: 39%;
       height: 80%;
-      background-size: 60% 100%;
+      background-size: 70% 100%;
       background-repeat: no-repeat;
-      background-image: url("assets/pokedex_closed.png");
+      background-image: url(assets/pokedex_closed.png);
     }
   }
+  &-carousel-box {
+    width: 70%;
+  }
   &__carousel {
-    width: 500px;;
+    width: 100%;
     height: 100%;
   }
 

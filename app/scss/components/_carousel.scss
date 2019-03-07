@@ -1,0 +1,51 @@
+.carousel {
+  color: red;
+  background-color: black;
+}
+
+.start-carousel {
+  animation-name: startCarousel;
+  animation-duration: 1.5s;
+}
+
+.end-carousel {
+  animation-name: endCarousel;
+  animation-duration: 1.5s;
+}
+
+@keyframes endCarousel {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes startCarousel {
+
+  0% {
+    opacity: 0;
+    /* transform: translateX(-100px); */
+  }
+
+  /* 10% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: translateX(10px);
+  } */
+
+  100% {
+    opacity: 1;
+    /* transform: translateX(0) rotate(360deg); */
+  }
+}
+
+/* .animaiton-element-class {
+  animation-name: animationName; (to call the animation)
+  animation-duration: 3s; (to set the animation duration)
+  animation-delay: 5s; (to repeat the animation after the delays set)
+  animation-iteration-count: 4; (to repeat the iterations by the count time set)
+} */

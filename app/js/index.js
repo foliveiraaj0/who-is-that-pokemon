@@ -106,7 +106,7 @@ class Pokemon {
 
 let currentPokemon = {};
 let currentPokedexState = PokedexState.CLOSED;
-let pokemonList = [];
+let pokemonList = [{name:'bulbasaur'}];
 
 function getPokemon(name, callback) {
   p.getPokemonByName(name) 
@@ -126,12 +126,7 @@ function setHandlers() {
     const answerIsValid = validateAnswer(answer);
     if(answerIsValid) {
       pokemonList.push(currentPokemon);
-      const pokedex_carousel = $(ScreenElements.POKEDEX_CAROUSEL);
-      pokedex_carousel.text("");
-      pokemonList.forEach(pokemon => {
-        console.log(pokemon.name);
-        pokedex_carousel.text(pokedex_carousel.text() + pokemon.name + ", ");
-      })
+      updateCarousel();
       currentPokemon = undefined;
       skipPokemon();
     }
@@ -183,6 +178,7 @@ function setPokedexState(state) {
 }
 
 function openPokedex() {
+  updateCarousel();
   const pokedex_device = $(ScreenElements.POKEDEX_DEVICE);
   pokedex_device.removeClass('pokedex__device--closed');
   pokedex_device.addClass('pokedex__device--openned');
@@ -194,12 +190,25 @@ function closePokedex() {
   pokedex_device.addClass('pokedex__device--closed');
 }
 
+function updateCarousel() {
+  const pokedex_carousel = $(ScreenElements.POKEDEX_CAROUSEL);
+  pokedex_carousel.text("");
+  pokemonList.forEach(pokemon => {
+    console.log(pokemon.name);
+    pokedex_carousel.text(pokedex_carousel.text() + pokemon.name + ", ");
+  })
+  const lastCommaIndex = pokedex_carousel.text().trim().length - 1;
+  pokedex_carousel.text(pokedex_carousel.text().substring(0,lastCommaIndex));
+}
+
 function showCarousel() {
   const pokedex_carousel = $(ScreenElements.POKEDEX_CAROUSEL);
   const pokedex_no_pokemons = $(ScreenElements.POKEDEX_NO_POKEMOnS);
-  if(pokemonList && pokemonList.length > 0) {
+  if(hasPokemons()) {
     pokedex_carousel.removeClass('u_hide');
     pokedex_carousel.addClass('u_show');
+    pokedex_carousel.removeClass('end-carousel');
+    pokedex_carousel.addClass('start-carousel');
 
     pokedex_no_pokemons.removeClass('u_show');
     pokedex_no_pokemons.addClass('u_hide');
@@ -216,11 +225,26 @@ function showCarousel() {
 function hideCarousel() {
   const pokedex_carousel = $(ScreenElements.POKEDEX_CAROUSEL);
   const pokedex_no_pokemons = $(ScreenElements.POKEDEX_NO_POKEMOnS);
-  pokedex_carousel.removeClass('u_show');
-  pokedex_carousel.addClass('u_hide');
+  if(hasPokemons()) {
+    pokedex_carousel.removeClass('u_hide');
+    pokedex_carousel.addClass('u_show');
+    pokedex_carousel.removeClass('start-carousel');
+    pokedex_carousel.addClass('end-carousel');
 
-  pokedex_no_pokemons.removeClass('u_show');
-  pokedex_no_pokemons.addClass('u_hide');
+    pokedex_no_pokemons.removeClass('u_show');
+    pokedex_no_pokemons.addClass('u_hide');
+  }
+  else {
+    pokedex_carousel.removeClass('u_show');
+    pokedex_carousel.addClass('u_hide');
+
+    pokedex_no_pokemons.removeClass('u_show');
+    pokedex_no_pokemons.addClass('u_hide');
+  }
+}
+
+function hasPokemons() {
+  return pokemonList && pokemonList.length > 0;
 }
 
 function cleanInput() {
