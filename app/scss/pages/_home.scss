@@ -105,13 +105,13 @@
       height: 100%;
       background-size: 100% 87%;
       background-repeat: no-repeat;
-      background-image: url(assets/pokedex_openned.png);
+      background-image: url(assets/pokedex_openned_aligned.png);
     }
     &--closed {
       height: 80%;
-      background-size: 70% 100%;
+      background-size: 58% 100%;
       background-repeat: no-repeat;
-      background-image: url(assets/pokedex_closed.png);
+      background-image: url(assets/pokedex_closed_aligned.png);
     }
   }
   &__carousel {
