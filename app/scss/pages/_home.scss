@@ -96,19 +96,19 @@
 }
 
 .pokedex {
-  height: 20rem;
+  height: 17rem;
   width: 100%;
   display: flex;
   &__device {
     width: 30%;
     &--openned {
       height: 100%;
-      background-size: 100% 87%;
+      background-size: 100% 100%;
       background-repeat: no-repeat;
       background-image: url(assets/pokedex_openned_aligned.png);
     }
     &--closed {
-      height: 80%;
+      height: 100%;
       background-size: 58% 100%;
       background-repeat: no-repeat;
       background-image: url(assets/pokedex_closed_aligned.png);
