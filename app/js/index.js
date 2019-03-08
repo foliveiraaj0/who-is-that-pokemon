@@ -147,13 +147,13 @@ function setHandlers() {
   })
 
   $(EventEmiter.CAROUSEL_CONTROLER_LEFT).click( () => {
-    if(currentPokedexState === PokedexState.OPENNED ) {
+    if(currentPokedexState === PokedexState.OPENNED) {
       carouselGoLeft();
     }
   })
 
   $(EventEmiter.CAROUSEL_CONTROLER_RIGHT).click( () => {
-    if(currentPokedexState === PokedexState.OPENNED ) {
+    if(currentPokedexState === PokedexState.OPENNED) {
       carouselGoRight();
     }
   })
@@ -275,7 +275,6 @@ function showCarousel() {
 function showCarouselSlider() {
   const pokedex_carousel = $(ScreenElements.POKEDEX_CAROUSEL);
   pokedex_carousel.removeClass('u_hide');
-  pokedex_carousel.addClass('.u_show-flex');
   pokedex_carousel.removeClass('end-carousel');
   pokedex_carousel.addClass('start-carousel');
 }
@@ -283,7 +282,6 @@ function showCarouselSlider() {
 function showCarouselControler() {
   const pokedex_controler = $(ScreenElements.POKEDEX_CONTROLER);
   pokedex_controler.removeClass('u_hide');
-  pokedex_controler.addClass('.u_show');
   pokedex_controler.removeClass('end-carousel');
   pokedex_controler.addClass('start-carousel');
 }
@@ -291,7 +289,7 @@ function showCarouselControler() {
 function showNoPokemons() {
   const pokedex_no_pokemons = $(ScreenElements.POKEDEX_NO_POKEMONS);
   pokedex_no_pokemons.removeClass('u_hide');
-    pokedex_no_pokemons.addClass('u_show');
+  pokedex_no_pokemons.addClass('u_show');
 }
 
 function hideCarousel() {
@@ -302,16 +300,12 @@ function hideCarousel() {
 
 function hideCarouselSlider() {
   const pokedex_carousel = $(ScreenElements.POKEDEX_CAROUSEL);
-  pokedex_carousel.removeClass('u_hide');
-  pokedex_carousel.addClass('.u_show-flex');
   pokedex_carousel.removeClass('start-carousel');
   pokedex_carousel.addClass('end-carousel');
 }
 
 function hideCarouselControler() {
   const pokedex_controler = $(ScreenElements.POKEDEX_CONTROLER);
-  pokedex_controler.removeClass('u_hide');
-  pokedex_controler.addClass('.u_show');
   pokedex_controler.removeClass('start-carousel');
   pokedex_controler.addClass('end-carousel');
 }
@@ -332,7 +326,6 @@ function cleanInput() {
 }
 
 function invalidateCarsousel() {
-
   if(hasPokemons) {
     const carousel = $( '.carousel-box' );
     for (let i=0; i<carousel.length; i++) {
