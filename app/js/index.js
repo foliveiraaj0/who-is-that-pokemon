@@ -134,7 +134,7 @@ function setHandlers() {
     if(answerIsValid) {
       pokemonList.push(currentPokemon);
       invalidateCarsousel();
-      if(pokemonList.length === 1) {
+      if(pokemonList.length === 1 && pokedexIsOpen()) {
         hideCarousel();
         showCarousel();
       }
@@ -144,23 +144,27 @@ function setHandlers() {
   });
 
   $(EventEmiter.POKEDEX_BUTTON).click( () => {
-    currentPokedexState = currentPokedexState === PokedexState.OPENNED 
+    currentPokedexState = pokedexIsOpen() 
     ? PokedexState.CLOSED
     : PokedexState.OPENNED;
     setPokedexState(currentPokedexState);
   })
 
   $(EventEmiter.CAROUSEL_CONTROLER_LEFT).click( () => {
-    if(currentPokedexState === PokedexState.OPENNED) {
+    if(pokedexIsOpen()) {
       carouselGoLeft();
     }
   })
 
   $(EventEmiter.CAROUSEL_CONTROLER_RIGHT).click( () => {
-    if(currentPokedexState === PokedexState.OPENNED) {
+    if(pokedexIsOpen()) {
       carouselGoRight();
     }
   })
+}
+
+function pokedexIsOpen() {
+  return currentPokedexState === PokedexState.OPENNED;
 }
 
 function setQuizPokemon(back_sprite) {
@@ -170,7 +174,7 @@ function setQuizPokemon(back_sprite) {
 function skipPokemon() {
   getPokemon(getRandomPokemonId(), (pokemon) => {
     currentPokemon = pokemon;
-    console.log(currentPokemon);
+    console.log(currentPokemon.name);
     setQuizPokemon(pokemon.back_sprite);
     cleanInput();
   })
@@ -291,7 +295,7 @@ function showCarouselControler() {
 function showNoPokemons() {
   const pokedex_no_pokemons = $(ScreenElements.POKEDEX_NO_POKEMONS);
   pokedex_no_pokemons.removeClass('u_hide');
-  pokedex_no_pokemons.addClass('u_show');
+  pokedex_no_pokemons.addClass('u_show_flex');
 }
 
 function hideCarousel() {
@@ -314,7 +318,7 @@ function hideCarouselControler() {
 
 function hideNoPokemons() {
   const pokedex_no_pokemons = $(ScreenElements.POKEDEX_NO_POKEMONS);
-  pokedex_no_pokemons.removeClass('u_show');
+  pokedex_no_pokemons.removeClass('u_show_flex');
   pokedex_no_pokemons.addClass('u_hide');
 }
 
@@ -345,7 +349,7 @@ function invalidateCarsousel() {
 function init() {
   getPokemon(getRandomPokemonId(), (pokemon) => {
     currentPokemon = pokemon;
-    console.log(currentPokemon);
+    console.log(currentPokemon.name);
     setHandlers();
     setQuizPokemon(pokemon.back_sprite);
     invalidateCarsousel();
