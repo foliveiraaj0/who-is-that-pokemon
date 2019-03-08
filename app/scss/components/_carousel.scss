@@ -2,21 +2,56 @@
   width: 100%;
   height: 100%;
   display: flex;
+  overflow: hidden;
+  position: relative;
   /* padding-left: 5%;
   padding-right: 5%; */
   > * {
     width: 20%;
     align-self: center;
+    position: absolute;
     > img {
       width: 100%;
       height: 100%;
       transform: scale(1.5);
+      
       /* transform: scale(1.5);
        width: 120%;
       height: 120%;  */
     }
   }
-  
+
+  .carousel-out-box {
+    &--left {
+      left: -20%;
+    }
+    &--right {
+      left: 100%;
+    }
+  }
+
+  .carousel-edge-box {
+    &--left {
+      left: 0;
+    }
+    &--right {
+      left: 80%;
+    }
+  }
+
+  .carousel-midle-box {
+    &--left {
+      left: 20%;
+    }
+    &--right {
+      left: 60%
+    }
+  }
+
+  .carousel-center-box {
+   left: 40%;
+  }
+
 }
 
 .start-carousel {
@@ -30,6 +65,12 @@
   animation-name: endCarousel;
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
+}
+
+.swap-left {
+  animation: swapLeft 1s;
+  animation-timing-function: linear;
+  /* animation-fill-mode: forwards; */
 }
 
 @keyframes endCarousel {
@@ -61,6 +102,24 @@
     opacity: 1;
     display: flex;
     /* transform: translateX(0) rotate(360deg); */
+  }
+}
+
+@keyframes swapLeft {
+
+  100% {
+    transform: translateX(-100%);
+  }
+
+}
+
+@keyframes swapRight {
+  0% {
+    
+  }
+
+  100% {
+    transform: translateX(100%);
   }
 }
 

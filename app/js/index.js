@@ -130,6 +130,9 @@ function setHandlers() {
       currentPokemon = undefined;
       skipPokemon();
     }
+
+    carouselGoLeft();
+    
   });
 
   $(EventEmiter.POKEDEX_BUTTON).click( () => {
@@ -199,6 +202,23 @@ function updateCarousel() {
   })
   const lastCommaIndex = pokedex_carousel.text().trim().length - 1;
   pokedex_carousel.text(pokedex_carousel.text().substring(0,lastCommaIndex)); */
+}
+
+function carouselGoLeft() {
+  const carousel = $( '.carousel-box' );
+
+  if(carousel && carousel.length > 0) {
+    for (let i=0; i<carousel.length; i++) {
+      const currentBoxDiv = carousel.get(i);
+      const currentBoxObj = $(currentBoxDiv);
+      currentBoxObj.on("animationend", () => {
+        const pokemonImg = $(currentBoxDiv.children[0]);
+        pokemonImg.attr("src", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/540.png");
+        currentBoxObj.removeClass('swap-left');
+      });
+      currentBoxObj.addClass('swap-left');
+    }
+  }
 }
 
 function showCarousel() {
