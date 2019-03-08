@@ -1,11 +1,9 @@
 .carousel {
   width: 100%;
-  height: 100%;
+  height: 80%;
   display: flex;
   overflow: hidden;
   position: relative;
-  /* padding-left: 5%;
-  padding-right: 5%; */
   > * {
     width: 20%;
     align-self: center;
@@ -13,11 +11,7 @@
     > img {
       width: 100%;
       height: 100%;
-      transform: scale(1.5);
-      
-      /* transform: scale(1.5);
-       width: 120%;
-      height: 120%;  */
+      transform: scale(1.2);
     }
   }
 
@@ -70,62 +64,31 @@
 .swap-left {
   animation: swapLeft .4s;
   animation-timing-function: linear;
-  /* animation-fill-mode: forwards; */
 }
 
-@keyframes endCarousel {
-  0% {
-    opacity: 1;
-  }
-  100%  {
-    opacity: 0;
-    display: none;
-  }
+.swap-right {
+  animation: swapRight .4s;
+  animation-timing-function: linear;
 }
 
 @keyframes startCarousel {
-
   0% {
     opacity: 0;
-    /* transform: translateX(-100px); */
   }
-
-  /* 10% {
-    transform: rotate(180deg);
-  }
-
-  75% {
-    transform: translateX(10px);
-  } */
-
   100% {
     opacity: 1;
     display: flex;
-    /* transform: translateX(0) rotate(360deg); */
   }
 }
 
 @keyframes swapLeft {
-
   100% {
     transform: translateX(-100%);
   }
-
 }
 
 @keyframes swapRight {
-  0% {
-    
-  }
-
   100% {
     transform: translateX(100%);
   }
 }
-
-/* .animaiton-element-class {
-  animation-name: animationName; (to call the animation)
-  animation-duration: 3s; (to set the animation duration)
-  animation-delay: 5s; (to repeat the animation after the delays set)
-  animation-iteration-count: 4; (to repeat the iterations by the count time set)
-} */
