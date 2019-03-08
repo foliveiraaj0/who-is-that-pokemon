@@ -104,9 +104,15 @@ class Pokemon {
   
 }
 
+const pokemonListString = "[{\"name\":\"weepinbell\",\"abilities\":[{\"ability\":{\"name\":\"gluttony\",\"url\":\"https://pokeapi.co/api/v2/ability/82/\"},\"is_hidden\":true,\"slot\":3},{\"ability\":{\"name\":\"chlorophyll\",\"url\":\"https://pokeapi.co/api/v2/ability/34/\"},\"is_hidden\":false,\"slot\":1}],\"hp\":65,\"speed\":55,\"defense\":50,\"attack\":90,\"front_sprite\":\"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/70.png\",\"back_sprite\":\"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/70.png\",\"type\":\"grass\"},{\"name\":\"luvdisc\",\"abilities\":[{\"ability\":{\"name\":\"hydration\",\"url\":\"https://pokeapi.co/api/v2/ability/93/\"},\"is_hidden\":true,\"slot\":3},{\"ability\":{\"name\":\"swift-swim\",\"url\":\"https://pokeapi.co/api/v2/ability/33/\"},\"is_hidden\":false,\"slot\":1}],\"hp\":43,\"speed\":97,\"defense\":55,\"attack\":30,\"front_sprite\":\"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/370.png\",\"back_sprite\":\"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/370.png\",\"type\":\"grass\"},{\"name\":\"stoutland\",\"abilities\":[{\"ability\":{\"name\":\"scrappy\",\"url\":\"https://pokeapi.co/api/v2/ability/113/\"},\"is_hidden\":true,\"slot\":3},{\"ability\":{\"name\":\"sand-rush\",\"url\":\"https://pokeapi.co/api/v2/ability/146/\"},\"is_hidden\":false,\"slot\":2},{\"ability\":{\"name\":\"intimidate\",\"url\":\"https://pokeapi.co/api/v2/ability/22/\"},\"is_hidden\":false,\"slot\":1}],\"hp\":85,\"speed\":80,\"defense\":90,\"attack\":110,\"front_sprite\":\"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/508.png\",\"back_sprite\":\"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/508.png\",\"type\":\"grass\"},{\"name\":\"ambipom\",\"abilities\":[{\"ability\":{\"name\":\"skill-link\",\"url\":\"https://pokeapi.co/api/v2/ability/92/\"},\"is_hidden\":true,\"slot\":3},{\"ability\":{\"name\":\"pickup\",\"url\":\"https://pokeapi.co/api/v2/ability/53/\"},\"is_hidden\":false,\"slot\":2},{\"ability\":{\"name\":\"technician\",\"url\":\"https://pokeapi.co/api/v2/ability/101/\"},\"is_hidden\":false,\"slot\":1}],\"hp\":75,\"speed\":115,\"defense\":66,\"attack\":100,\"front_sprite\":\"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/424.png\",\"back_sprite\":\"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/424.png\",\"type\":\"grass\"},{\"name\":\"ferroseed\",\"abilities\":[{\"ability\":{\"name\":\"iron-barbs\",\"url\":\"https://pokeapi.co/api/v2/ability/160/\"},\"is_hidden\":false,\"slot\":1}],\"hp\":44,\"speed\":10,\"defense\":91,\"attack\":50,\"front_sprite\":\"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/597.png\",\"back_sprite\":\"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/597.png\",\"type\":\"grass\"},{\"name\":\"manectric\",\"abilities\":[{\"ability\":{\"name\":\"minus\",\"url\":\"https://pokeapi.co/api/v2/ability/58/\"},\"is_hidden\":true,\"slot\":3},{\"ability\":{\"name\":\"lightning-rod\",\"url\":\"https://pokeapi.co/api/v2/ability/31/\"},\"is_hidden\":false,\"slot\":2},{\"ability\":{\"name\":\"static\",\"url\":\"https://pokeapi.co/api/v2/ability/9/\"},\"is_hidden\":false,\"slot\":1}],\"hp\":70,\"speed\":105,\"defense\":60,\"attack\":75,\"front_sprite\":\"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/310.png\",\"back_sprite\":\"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/310.png\",\"type\":\"grass\"},{\"name\":\"murkrow\",\"abilities\":[{\"ability\":{\"name\":\"prankster\",\"url\":\"https://pokeapi.co/api/v2/ability/158/\"},\"is_hidden\":true,\"slot\":3},{\"ability\":{\"name\":\"super-luck\",\"url\":\"https://pokeapi.co/api/v2/ability/105/\"},\"is_hidden\":false,\"slot\":2},{\"ability\":{\"name\":\"insomnia\",\"url\":\"https://pokeapi.co/api/v2/ability/15/\"},\"is_hidden\":false,\"slot\":1}],\"hp\":60,\"speed\":91,\"defense\":42,\"attack\":85,\"front_sprite\":\"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/198.png\",\"back_sprite\":\"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/198.png\",\"type\":\"grass\"},{\"name\":\"minccino\",\"abilities\":[{\"ability\":{\"name\":\"skill-link\",\"url\":\"https://pokeapi.co/api/v2/ability/92/\"},\"is_hidden\":true,\"slot\":3},{\"ability\":{\"name\":\"technician\",\"url\":\"https://pokeapi.co/api/v2/ability/101/\"},\"is_hidden\":false,\"slot\":2},{\"ability\":{\"name\":\"cute-charm\",\"url\":\"https://pokeapi.co/api/v2/ability/56/\"},\"is_hidden\":false,\"slot\":1}],\"hp\":55,\"speed\":75,\"defense\":40,\"attack\":50,\"front_sprite\":\"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/572.png\",\"back_sprite\":\"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/572.png\",\"type\":\"grass\"},{\"name\":\"kricketune\",\"abilities\":[{\"ability\":{\"name\":\"technician\",\"url\":\"https://pokeapi.co/api/v2/ability/101/\"},\"is_hidden\":true,\"slot\":3},{\"ability\":{\"name\":\"swarm\",\"url\":\"https://pokeapi.co/api/v2/ability/68/\"},\"is_hidden\":false,\"slot\":1}],\"hp\":77,\"speed\":65,\"defense\":51,\"attack\":85,\"front_sprite\":\"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/402.png\",\"back_sprite\":\"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/402.png\",\"type\":\"grass\"},{\"name\":\"cubone\",\"abilities\":[{\"ability\":{\"name\":\"battle-armor\",\"url\":\"https://pokeapi.co/api/v2/ability/4/\"},\"is_hidden\":true,\"slot\":3},{\"ability\":{\"name\":\"lightning-rod\",\"url\":\"https://pokeapi.co/api/v2/ability/31/\"},\"is_hidden\":false,\"slot\":2},{\"ability\":{\"name\":\"rock-head\",\"url\":\"https://pokeapi.co/api/v2/ability/69/\"},\"is_hidden\":false,\"slot\":1}],\"hp\":50,\"speed\":35,\"defense\":95,\"attack\":50,\"front_sprite\":\"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/104.png\",\"back_sprite\":\"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/104.png\",\"type\":\"grass\"}]";
+let pokemonList = JSON.parse(pokemonListString);
+const MAX_CAROUSEL_CURSOR = 7;
+
 let currentPokemon = {};
 let currentPokedexState = PokedexState.CLOSED;
-let pokemonList = [{name:'bulbasaur'}];
+let carouselCursor = 2;
+console.log(pokemonList[carouselCursor]);
+console.log(pokemonList);
 
 function getPokemon(name, callback) {
   p.getPokemonByName(name) 
@@ -153,6 +159,10 @@ function skipPokemon() {
     console.log(currentPokemon);
     setQuizPokemon(pokemon.back_sprite);
     cleanInput();
+    /* pokemonList.push(currentPokemon);
+    if(pokemonList.length == 10) {
+      console.log(JSON.stringify(pokemonList));
+    } */
   })
 }
 
@@ -206,18 +216,22 @@ function updateCarousel() {
 
 function carouselGoLeft() {
   const carousel = $( '.carousel-box' );
-
-  if(carousel && carousel.length > 0) {
+  if(carouselCursor < MAX_CAROUSEL_CURSOR) {
     for (let i=0; i<carousel.length; i++) {
       const currentBoxDiv = carousel.get(i);
       const currentBoxObj = $(currentBoxDiv);
       currentBoxObj.on("animationend", () => {
-        const pokemonImg = $(currentBoxDiv.children[0]);
-        pokemonImg.attr("src", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/540.png");
+        const nextImgIndex = carouselCursor - 3 + i;
+        if(nextImgIndex > 0 && nextImgIndex < pokemonList.length) {
+          const pokemonImg = $(currentBoxDiv.children[0]);
+          pokemonImg.attr("src", pokemonList[nextImgIndex].front_sprite);
+        }
         currentBoxObj.removeClass('swap-left');
       });
+      
       currentBoxObj.addClass('swap-left');
     }
+    carouselCursor++;
   }
 }
 
@@ -272,12 +286,40 @@ function cleanInput() {
   answerInput.val("");
 }
 
+function initCarsousel() {
+  if(hasPokemons) {
+    const carousel = $( '.carousel-box' );
+    for (let i=3; i<carousel.length; i++) {
+      const currentBoxDiv = carousel.get(i);
+      const pokemonImg = $(currentBoxDiv.children[0]);
+      const imgIndex = carouselCursor + i - 3;
+      if(imgIndex >= 0 && imgIndex < pokemonList.length) {
+        const sprite = pokemonList[imgIndex].front_sprite;
+        pokemonImg.attr("src", sprite);
+        console.log(sprite);
+      }
+    }
+
+    for (let i=0; i<3; i++) {
+      const currentBoxDiv = carousel.get(i);
+      const pokemonImg = $(currentBoxDiv.children[0]);
+      const imgIndex = carouselCursor - 3 + i;
+      if(imgIndex >= 0 && imgIndex < pokemonList.length) {
+        const sprite = pokemonList[imgIndex].front_sprite;
+        pokemonImg.attr("src", sprite);
+        console.log(sprite);
+      }
+    }
+  }
+}
+
 function init() {
   getPokemon(getRandomPokemonId(), (pokemon) => {
     currentPokemon = pokemon;
     console.log(currentPokemon);
     setHandlers();
     setQuizPokemon(pokemon.back_sprite);
+    initCarsousel();
   })
 }
 
