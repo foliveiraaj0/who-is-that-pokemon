@@ -8,31 +8,46 @@
     <link rel="stylesheet" href="./index.css">
   </head>
   <body>
-    <section class="header">
-    </section>
+    <!-- <section class="header">
+    </section> -->
     <section class="content">
       <div class="quiz">
-        <div id="quiz_pokemon" class="quiz__pokemon">
-          
-        </div>
         <div class="quiz__question">
+          <div id="quiz_pokemon" class="quiz__question--pokemon">
+          </div>
 
+          <div class="quiz__question--background">
+          </div>
         </div>
-        <ul id="quiz_tips" class="quiz__tips u_centrilize">
-          <li class="tips__text">
-            he eats a lot of apple
-          </li>
-          <li class="tips__text">
-            he is adorable
-          </li>
-          <li class="tips__text">
-            he is yellow
-          </li>
-          <li class="tips__text">
-            he is kind a rat but he doesn't looke like one
-          </li>
-        </ul>
-        <div class="quiz-options">
+
+        <div id="quiz_tips" class="quiz__tips">
+          <h3 class="quiz__tips--title">Tips</h3>
+            <!-- <div class="tip">
+              <ul>
+                <li>
+                  description: bla bla bla
+                </li>
+                <li>
+                  type: grass
+                </li>
+                <li>
+                  attack: 50
+                </li>
+                <li>
+                  defense: 50
+                </li>
+                <li>
+                  speed: 30
+                </li>
+              </ul>
+            </div> -->
+            <div class="quiz__tips--letters col-sm"> 
+              P_K__HU
+            </div>
+          </div>      
+      </div>
+
+      <div class="quiz-options">
           <div class="row u_no_margin">
             <div class="quiz-options__skip col-sm">
               <a id="skip_button" href="javascript:void(0)" class="quiz-options__button quiz-options__button--skip">I don't know this pokemon, skip it</a>
@@ -43,11 +58,12 @@
             </div>
           </div>
         </div>
-      </div>
+
       <div class="pokedex">
         <div id="pokedex_device" class="pokedex__device pokedex__device--closed">
             <a id="pokedex" href="javascript:void(0)" class="u_fill-div"></a>
         </div>
+        
         <div class="pokedex-carousel">
           <div id="pokedex_carousel" class="carousel u_hide">
             <div class="carousel-box carousel-out-box carousel-out-box--left">
